@@ -5,8 +5,8 @@ JAVA Programing
 ###### 예제
 ____________________________________________________
 
-  1. I/O를 통한 Memo 작성
-  2. DB를 통한 Memo 작성
+  1. [I/O를 통한 Memo Model 작성](https://github.com/Hooooong/DAY5_Memo/blob/master/src/Model.java)
+  2. [DB를 통한 Memo Model 작성](https://github.com/Hooooong/DAY5_Memo/blob/master/src/ModelWithDB.java)
 
 ###### 공부내용
 ____________________________________________________
@@ -70,22 +70,22 @@ ____________________________________________________
 
       3. 추가된 try-with-resource
 
-        ```java
-        // try()에 자원을 사용하는 객체들을 넣어 생성한다.
-        // 1개 이상의 객체들을 넣을 수 있다.
-        try(FileInputStream fis = new FileInputStream();
-          Connection con = DriverManager.getConnection();){
+          ```java
+          // try()에 자원을 사용하는 객체들을 넣어 생성한다.
+          // 1개 이상의 객체들을 넣을 수 있다.
+          try(FileInputStream fis = new FileInputStream();
+            Connection con = DriverManager.getConnection();){
 
-        }catch(Exception e){
+          }catch(Exception e){
 
-        }
-        ```
+          }
+          ```
 
-        - JDK 1.7 부터 try-with-resource 문이 추가되어
-        - try {자원 객체;} 를 넣으면 자동으로 자원의 close()를 해준다.
-  		  - 하지만 자원을 사용하는 모든 객체들을 넣을 수 있는게 아니고 AutoCloseable을 implements한 객체만 넣을 수 있다.
+          - JDK 1.7 부터 try-with-resource 문이 추가되어
+          - try {자원 객체;} 를 넣으면 자동으로 자원의 close()를 해준다.
+          - 하지만 자원을 사용하는 모든 객체들을 넣을 수 있는게 아니고 AutoCloseable을 implements한 객체만 넣을 수 있다.
 
-  - I/O Stream
+  - [I/O](https://github.com/Hooooong/DAY5_Memo/blob/master/pdf/012_FileIO_NIO.pdf)
 
       - I/O(Input/Output, 입출력) 란?
 
@@ -110,22 +110,22 @@ ____________________________________________________
               - OutputStreamWirter : 문자 Stream 을 Byte Stream 으로 변환
               - BufferedWirter : 문자 Stream 에 버퍼 출력, 줄바꿈 사용
 
-              ```java
-              /*
-               * FileOutputStream (Byte단위 출력하는 Stream)
-               *  			|
-               * OutputStreamWriter (byte단위를 문자 단위 로 변환해주는 출력 Stream )
-               *  			|
-               * BufferedWriter (문자 단위를 출력하는 Stream (보조 Stream))
-               *
-               */
-              // 1. 출력하는 스트림을 연다.
-              FileOutputStream fos = new FileOutputStream(database, true);
-              // 2. 스트림을 중간 처리한다. (Text 의 Encoding 을 변경하는 작업)
-              OutputStreamWriter osw = new OutputStreamWriter(fos, "인코딩 명");
-              // 3. 버퍼 처리
-              BufferedWriter bw = new BufferedWriter(osw);
-              ```
+                ```java
+                /*
+                 * FileOutputStream (Byte단위 출력하는 Stream)
+                 *  			|
+                 * OutputStreamWriter (byte단위를 문자 단위 로 변환해주는 출력 Stream )
+                 *  			|
+                 * BufferedWriter (문자 단위를 출력하는 Stream (보조 Stream))
+                 *
+                 */
+                // 1. 출력하는 스트림을 연다.
+                FileOutputStream fos = new FileOutputStream(database, true);
+                // 2. 스트림을 중간 처리한다. (Text 의 Encoding 을 변경하는 작업)
+                OutputStreamWriter osw = new OutputStreamWriter(fos, "인코딩 명");
+                // 3. 버퍼 처리
+                BufferedWriter bw = new BufferedWriter(osw);
+                ```
 
           - FileInputStream, InputStreamReader, BufferedReader
 
@@ -133,14 +133,14 @@ ____________________________________________________
               - InputStreamReader :  Byte Stream 을 문자 Stream 으로 변환
               - BufferedReader : 문자 버퍼 입력, 라인 해석
 
-              ```java
-              // 1. 읽는 스트림을 연다
-              FileInputStream fis = new FileInputStream(database);
-              // 2. 스트림을 중간 처리한다. (Text 의 Encoding 을 변경하는 작업)
-              InputStreamReader isr = new InputStreamReader(fis, "인코딩 명");
-              // 3. 버퍼처리
-              BufferedReader br = new BufferedReader(isr);
-              ```
+                ```java
+                // 1. 읽는 스트림을 연다
+                FileInputStream fis = new FileInputStream(database);
+                // 2. 스트림을 중간 처리한다. (Text 의 Encoding 을 변경하는 작업)
+                InputStreamReader isr = new InputStreamReader(fis, "인코딩 명");
+                // 3. 버퍼처리
+                BufferedReader br = new BufferedReader(isr);
+                ```
 
           - 그 외 클래스
 
