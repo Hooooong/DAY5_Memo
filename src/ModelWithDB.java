@@ -48,7 +48,6 @@ public class ModelWithDB {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(URL, USER_ID, USER_PASSWORD);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
 		try {
@@ -86,7 +85,6 @@ public class ModelWithDB {
 			stmt.executeUpdate();
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -130,7 +128,6 @@ public class ModelWithDB {
 			}
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return memo;
@@ -165,7 +162,6 @@ public class ModelWithDB {
 			stmt.executeUpdate();
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -197,7 +193,6 @@ public class ModelWithDB {
 			stmt.executeUpdate();
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -236,7 +231,6 @@ public class ModelWithDB {
 			}
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return arrayList;
@@ -272,7 +266,6 @@ public class ModelWithDB {
 			}
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

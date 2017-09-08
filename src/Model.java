@@ -35,7 +35,7 @@ public class Model {
 			//디렉토리가 없으면
 			
 			// dir.mkdirs();
-			// dir.mkdir();				// 경
+			// dir.mkdir();				
 			
 			/*
 			 * file객체.mkdirs();
