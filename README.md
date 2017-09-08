@@ -120,6 +120,7 @@ ____________________________________________________
                *
                */
               // 1. 출력하는 스트림을 연다.
+              // 매개변수중 boolean 값은 파일을 덮어 쓸 경우 false, 지우고 새로 만들 경우 true 로 한다.
               FileOutputStream fos = new FileOutputStream(database, true);
               // 2. 스트림을 중간 처리한다. (Text 의 Encoding 을 변경하는 작업)
               OutputStreamWriter osw = new OutputStreamWriter(fos, "인코딩 명");
@@ -135,6 +136,7 @@ ____________________________________________________
 
               ```java
               // 1. 읽는 스트림을 연다
+              // 매개변수중 boolean 값이 없으면 기본적으로 false 로 설정된다.
               FileInputStream fis = new FileInputStream(database);
               // 2. 스트림을 중간 처리한다. (Text 의 Encoding 을 변경하는 작업)
               InputStreamReader isr = new InputStreamReader(fis, "인코딩 명");
