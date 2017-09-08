@@ -97,11 +97,8 @@ ____________________________________________________
           - 명칭의 종류
 
               - Strem 으로 시작하는 클래스 : Byte 단위로 입출력을 수행하는 클래스
-
               - Reader / Writer 로 끝나는 클래스 : 문자 단위로 입출력을 수행하는 클래스
-
               - File 로 시작하는 클래스 : HDD의 File 을 사용하는 클래스
-
               - Buffered 로 시작하는 클래스 : 시스템의 버퍼를 사용하는 클래스
 
           - FileOutputStream, OutputStreamWirter, BufferedWirter
