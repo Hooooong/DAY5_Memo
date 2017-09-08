@@ -110,22 +110,22 @@ ____________________________________________________
               - OutputStreamWirter : 문자 Stream 을 Byte Stream 으로 변환
               - BufferedWirter : 문자 Stream 에 버퍼 출력, 줄바꿈 사용
 
-                ```java
-                /*
-                 * FileOutputStream (Byte단위 출력하는 Stream)
-                 *  			|
-                 * OutputStreamWriter (byte단위를 문자 단위 로 변환해주는 출력 Stream )
-                 *  			|
-                 * BufferedWriter (문자 단위를 출력하는 Stream (보조 Stream))
-                 *
-                 */
-                // 1. 출력하는 스트림을 연다.
-                FileOutputStream fos = new FileOutputStream(database, true);
-                // 2. 스트림을 중간 처리한다. (Text 의 Encoding 을 변경하는 작업)
-                OutputStreamWriter osw = new OutputStreamWriter(fos, "인코딩 명");
-                // 3. 버퍼 처리
-                BufferedWriter bw = new BufferedWriter(osw);
-                ```
+              ```java
+              /*
+               * FileOutputStream (Byte단위 출력하는 Stream)
+               *  			|
+               * OutputStreamWriter (byte단위를 문자 단위 로 변환해주는 출력 Stream )
+               *  			|
+               * BufferedWriter (문자 단위를 출력하는 Stream (보조 Stream))
+               *
+               */
+              // 1. 출력하는 스트림을 연다.
+              FileOutputStream fos = new FileOutputStream(database, true);
+              // 2. 스트림을 중간 처리한다. (Text 의 Encoding 을 변경하는 작업)
+              OutputStreamWriter osw = new OutputStreamWriter(fos, "인코딩 명");
+              // 3. 버퍼 처리
+              BufferedWriter bw = new BufferedWriter(osw);
+              ```
 
           - FileInputStream, InputStreamReader, BufferedReader
 
@@ -133,60 +133,60 @@ ____________________________________________________
               - InputStreamReader :  Byte Stream 을 문자 Stream 으로 변환
               - BufferedReader : 문자 버퍼 입력, 라인 해석
 
-                ```java
-                // 1. 읽는 스트림을 연다
-                FileInputStream fis = new FileInputStream(database);
-                // 2. 스트림을 중간 처리한다. (Text 의 Encoding 을 변경하는 작업)
-                InputStreamReader isr = new InputStreamReader(fis, "인코딩 명");
-                // 3. 버퍼처리
-                BufferedReader br = new BufferedReader(isr);
-                ```
+              ```java
+              // 1. 읽는 스트림을 연다
+              FileInputStream fis = new FileInputStream(database);
+              // 2. 스트림을 중간 처리한다. (Text 의 Encoding 을 변경하는 작업)
+              InputStreamReader isr = new InputStreamReader(fis, "인코딩 명");
+              // 3. 버퍼처리
+              BufferedReader br = new BufferedReader(isr);
+              ```
 
           - 그 외 클래스
 
               - File : 파일 객체를 생성한다.
 
-                ```java
-                // Database 경로
-                private final String DB_DIR = "c:\\workspace\\java\\Memo\\database";
-                // File 경로
-                private final String DB_FILE = "memo.txt";
-                // 구분자
-                private final String COLUM_SEP = "::";
+              ```java
+              // Database 경로
+              private final String DB_DIR = "c:\\workspace\\java\\Memo\\database";
+              // File 경로
+              private final String DB_FILE = "memo.txt";
+              // 구분자
+              private final String COLUM_SEP = "::";
 
-                File dir = new File(DB_DIR);
+              File dir = new File(DB_DIR);
 
-                if(!dir.exists()) {
-                  //디렉토리가 없으면
+              if(!dir.exists()) {
+                //디렉토리가 없으면
 
-                  // dir.mkdirs();
-                  // dir.mkdir();
-
-                  /*
-                   * file객체.mkdirs();
-                   * file객체.mkdir();
-                   *
-                   * mkdir() 는 경로가 없으면 error 가 발생하지만
-                   * mkdirs() 는 경로가 없으면 그 경로를 생성해 준다.
-                   */
-                   dir.mkdirs();
-                }
+                // dir.mkdirs();
+                // dir.mkdir();
 
                 /*
-                 * File.separator 를 쓰는 이유
+                 * file객체.mkdirs();
+                 * file객체.mkdir();
                  *
-                 * OS 마다 separator 가 다르다
-                 * windows = \
-                 * mac, Linux, Unix = /
+                 * mkdir() 는 경로가 없으면 error 가 발생하지만
+                 * mkdirs() 는 경로가 없으면 그 경로를 생성해 준다.
                  */
-                File file = new File(DB_DIR + File.separator + DB_FILE);
+                 dir.mkdirs();
+              }
 
-                if(!file.exists()) {
-                  try {
-                    file.createNewFile();
-                  } catch (IOException e) {
-                    e.printStackTrace();
-                  }
+              /*
+               * File.separator 를 쓰는 이유
+               *
+               * OS 마다 separator 가 다르다
+               * windows = \
+               * mac, Linux, Unix = /
+               */
+              File file = new File(DB_DIR + File.separator + DB_FILE);
+
+              if(!file.exists()) {
+                try {
+                  file.createNewFile();
+                } catch (IOException e) {
+                  e.printStackTrace();
                 }
+              }
 
-                ```
+              ```
