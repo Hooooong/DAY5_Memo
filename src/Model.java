@@ -328,7 +328,6 @@ public class Model {
 			while((br.readLine()) != null) {
 				count++;
 			}
-			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -342,7 +341,9 @@ public class Model {
 	 * @return
 	 */
 	public int getMaxNum() {
+		// Max 번호
 		int maxNum = 0;
+		// 비교할 번호
 		int tempNum = 0;
 		try( 
 			// 1. 읽는 스트림을 연다	
@@ -357,13 +358,15 @@ public class Model {
 			String row;
 			while((row = br.readLine()) != null) {
 				String tempRow[] = row.split(COLUM_SEP);
+				// 비교할 번호를 담는다.
 				tempNum= Integer.parseInt(tempRow[0]);
 				
 				if(maxNum < tempNum) {
+					// Max 번호가 비교할 번호가 작으면
+					// Max 번호를 교체한다.
 					maxNum = tempNum;
 				}
 			}
-			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
