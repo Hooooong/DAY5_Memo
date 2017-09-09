@@ -72,8 +72,8 @@ public class ModelWithDB {
 			// 2. 쿼리를 실행
 			// 2.1  쿼리를 생성
 			StringBuffer insertBuffer = new StringBuffer();
-			insertBuffer.append("\n	INSERT INTO MEMO(NAME, CONTENT, DATETIME) 	");
-			insertBuffer.append("\n	VALUES( ?, ?, ?)							");
+			insertBuffer.append("\n	INSERT INTO MEMO(NAME, CONTENT, DATETIME)		");
+			insertBuffer.append("\n	VALUES( ?, ?, ?)								");
 		
 			// 2.2 쿼리를 실행가능한 상태로 만들어준다.
 			stmt = con.prepareStatement(insertBuffer.toString());
@@ -119,7 +119,7 @@ public class ModelWithDB {
 			// 2. 쿼리를 실행
 			// 2.1  쿼리를 생성
 			StringBuffer selectBuffer = new StringBuffer();
-			selectBuffer.append("\n	SELECT NO, NAME, CONTENT, DATETIME  ");
+			selectBuffer.append("\n	SELECT NO, NAME, CONTENT, DATETIME	");
 			selectBuffer.append("\n FROM MEMO							");
 			selectBuffer.append("\n WHERE NO = ?						");
 		
@@ -165,7 +165,7 @@ public class ModelWithDB {
 			// 2. 쿼리를 실행
 			// 2.1  쿼리를 생성
 			StringBuffer updateBuffer = new StringBuffer();
-			updateBuffer.append("\n UPDATE MEMO SET NAME= ? 			");
+			updateBuffer.append("\n UPDATE MEMO SET NAME= ?				");
 			updateBuffer.append("\n ,CONTENT = ?						");
 			updateBuffer.append("\n WHERE NO = ?						");
 		
@@ -200,7 +200,7 @@ public class ModelWithDB {
 			// 2. 쿼리를 실행
 			// 2.1  쿼리를 생성
 			StringBuffer updateBuffer = new StringBuffer();
-			updateBuffer.append("\n DELETE FROM MEMO 					");
+			updateBuffer.append("\n DELETE FROM MEMO					");
 			updateBuffer.append("\n WHERE NO = ?						");
 		
 			// 2.2 쿼리를 실행가능한 상태로 만들어준다.
