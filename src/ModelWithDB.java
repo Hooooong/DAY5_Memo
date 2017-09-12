@@ -92,7 +92,6 @@ public class ModelWithDB {
 			 * 
 			 */
 			stmt.executeUpdate();
-
 			
 		} catch (Exception e) {
 			e.printStackTrace();
